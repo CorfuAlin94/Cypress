@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+// <reference types="Cypress" />
 
 describe("My Second Test Suite", function () {
   it("My FirstTest case", function () {
@@ -19,10 +19,23 @@ describe("My Second Test Suite", function () {
       expect(str).to.equal("Hello , Are you sure you want to confirm?");
     });
 
+    cy.get("tr td:nth-child(2)").each(($e1, index, $list) => {
+      const text = $e1.text();
+      if (text.includes("Python")) {
+        cy.get("tr td:nth-child(2)")
+          .eq(index)
+          .next()
+          .then(function (price) {
+            const priceText = price.text();
+            expect(priceText).to.equal("25");
+          });
+      }
+    });
+
     cy.get("#opentab").invoke("removeAttr", "target").click();
 
-    cy.url().should("include", "qaclickacademy");
+    cy.url().should("includes", "qaclickacademy");
 
-    cy.go("back");
+    cy.go(-1);
   });
 });
