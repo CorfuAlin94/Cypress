@@ -1,11 +1,12 @@
-// <reference types="Cypress" />
+/// <reference types="Cypress" />
 
-describe("My Second Test Suite", function () {
+describe("Fundamentals 3", function () {
   it("My FirstTest case", function () {
     //Check boxes
     cy.visit("http://qaclickacademy.com/practice.php");
     cy.get("#alertbtn").click();
     cy.get('[value="Confirm"]').click();
+
     //window:alert
     cy.on("window:alert", (str) => {
       //Mocha
@@ -19,6 +20,7 @@ describe("My Second Test Suite", function () {
       expect(str).to.equal("Hello , Are you sure you want to confirm?");
     });
 
+    // Check equality in tables
     cy.get("tr td:nth-child(2)").each(($e1, index, $list) => {
       const text = $e1.text();
       if (text.includes("Python")) {
@@ -37,5 +39,12 @@ describe("My Second Test Suite", function () {
     cy.url().should("includes", "qaclickacademy");
 
     cy.go(-1);
+
+    //Frame & Child window
+    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
+
+    //cy.get('div.mouse-hover-content').invoke('show')
+    cy.contains("Top").click({ force: true });
+    cy.url().should("include", "top");
   });
 });

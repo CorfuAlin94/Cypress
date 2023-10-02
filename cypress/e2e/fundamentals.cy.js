@@ -11,7 +11,7 @@ describe("Fundamentals", () => {
     expect(1).to.equal(1);
   });
 
-  it("Testing Rahul Website", () => {
+  it("Fundamentals", () => {
     cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
     cy.get(".search-keyword").type("ca");
     cy.wait(2000);
