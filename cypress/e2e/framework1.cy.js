@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 //Page Object Designs
 import HomePage from "../pageObjects/HomePage";
 import ProductPage from "../pageObjects/ProductPage";
@@ -43,7 +41,7 @@ describe("Frameworks 1", function () {
     cy.wait(1000);
 
     cy.get(".suggestions > ul > li > a").click();
-    cy.get(".checkbox").click();
+    cy.get(".checkbox").click({ force: true });
     cy.get(".ng-untouched > .btn").click();
   });
 });
