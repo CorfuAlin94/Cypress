@@ -1,5 +1,9 @@
 /// <reference types="Cypress" />
 
+//Page Object Designs
+import HomePage from "../pageObjects/HomePage";
+import ProductPage from "../pageObjects/ProductPage";
+
 describe("Frameworks 1", function () {
   // Using Fixtures
 
@@ -10,20 +14,17 @@ describe("Frameworks 1", function () {
   });
 
   it("My FirstTest case", function () {
+    //Initialize Classes
+    let homePage = new HomePage();
+    let productPage = new ProductPage();
+
     cy.visit("https://rahulshettyacademy.com/angularpractice/");
-    cy.get(".form-group:nth-child(1) > .form-control").type(this.data.name);
+    homePage.getEditBox().type(this.data.name);
     cy.get("select").select(this.data.gender);
-    cy.get(".form-group:nth-child(1) > .form-control").should(
-      "have.value",
-      this.data.name
-    );
-    cy.get(".form-group:nth-child(1) > .form-control").should(
-      "have.attr",
-      "minlength",
-      2
-    );
+    homePage.getEditBox().should("have.value", this.data.name);
+    homePage.getEditBox().should("have.attr", "minlength", 2);
     cy.get("#inlineRadio3").should("be.disabled");
-    cy.pause();
+    // cy.pause();
 
     // Shop page
 
@@ -33,5 +34,16 @@ describe("Frameworks 1", function () {
     this.data.productNames.forEach((element) => {
       cy.selectProduct(element);
     });
+    productPage.getCheckoutButton().click();
+    productPage.getCheckoutCart().click();
+
+    //Delivery Page
+
+    cy.get("#country").type("Romania");
+    cy.wait(1000);
+
+    cy.get(".suggestions > ul > li > a").click();
+    cy.get(".checkbox").click();
+    cy.get(".ng-untouched > .btn").click();
   });
 });
