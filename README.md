@@ -3,4 +3,4 @@
 # Branches
 
 1. cy-fundamentals
-2. cy-frameworks
+2. cy-framework
