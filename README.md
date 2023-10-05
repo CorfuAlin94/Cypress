@@ -4,3 +4,5 @@
 
 1. cy-fundamentals
 2. cy-framework
+
+# Technologies used
