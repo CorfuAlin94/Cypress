@@ -3,7 +3,10 @@
 # Branches
 
 1. cy-fundamentals
+Objectives
+
 2. cy-framework
+Objectives
 
 # Technologies used
 1. Cypress
