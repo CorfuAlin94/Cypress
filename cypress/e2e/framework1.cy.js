@@ -38,8 +38,6 @@ describe("Frameworks 1", function () {
     //Delivery Page
 
     cy.get("#country").type("Romania");
-    cy.wait(1000);
-
     cy.get(".suggestions > ul > li > a").click();
     cy.get(".checkbox").click({ force: true });
     cy.get(".ng-untouched > .btn").click();

@@ -11,4 +11,5 @@ module.exports = defineConfig({
     },
   },
   projectId: "n7jmem",
+  defaultCommandTimeout: 7000,
 });
