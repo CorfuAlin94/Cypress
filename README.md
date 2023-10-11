@@ -11,6 +11,7 @@ Objectives
 3. cy-framework-automationTestStore
 Objectives
 
+
 # Technologies used
 1. Cypress
 2. Jenkins
