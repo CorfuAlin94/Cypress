@@ -3,14 +3,10 @@
 # Branches
 
 1. cy-fundamentals
-Objectives
 
 2. cy-framework
-Objectives
 
 3. cy-framework-automationTestStore
-Objectives
-
 
 # Technologies used
 1. Cypress
