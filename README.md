@@ -9,6 +9,7 @@
 3. cy-framework-automationTestStore
 
 # Technologies used
+
 1. Cypress
 2. Jenkins
 3. Cucumber
