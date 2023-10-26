@@ -8,7 +8,6 @@
 
 3. cy-framework-automationTestStore
 
-
 # Technologies used
 
 1. Cypress
