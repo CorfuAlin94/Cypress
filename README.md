@@ -2,7 +2,6 @@
 
 This repository contains all my Cypress projects. At the moment I have devided my work in 3 branches. If you want to skip all the introductory projects you can go to "cy-framework-automationTestStore" branch. In that branch I am using all all my knowledge of Cypress trying new ways of aproaching testing.
 
-
 # Branches
 
 1. cy-fundamentals
